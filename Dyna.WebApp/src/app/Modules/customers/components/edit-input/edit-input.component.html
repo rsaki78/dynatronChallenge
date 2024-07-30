@@ -1,0 +1,13 @@
+<div *ngIf="!editMode" (click)="editMode = true" class="cell">
+  {{ currency }} {{ data | number : "" : "en" }}
+</div>
+<input
+  *ngIf="editMode"
+  type="number"
+  appAutofocus
+  (focusout)="onFocusOut(); editMode = false"
+  [(ngModel)]="data"
+  class="cellInput"
+  />
+
+  <!-- (keydown.enter)="$event.target.blur()" -->
