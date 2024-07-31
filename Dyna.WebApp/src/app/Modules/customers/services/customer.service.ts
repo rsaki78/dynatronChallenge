@@ -31,14 +31,12 @@ export class CustomerService {
 
   createCustomer(customer: Customer): Observable<Customer> {
     const url = `${this.baseUrl}`;
-    const data = JSON.stringify(customer);
 
-    return this.http.post<Customer>(url, data);
+    return this.http.post<Customer>(url, customer);
   }
 
   updateCustomer(customer: Customer): Observable<void> {
     const url = `${this.baseUrl}/${customer.id}`;
-    const data = JSON.stringify(customer);
 
     return this.http.put<void>(url, customer);
   }

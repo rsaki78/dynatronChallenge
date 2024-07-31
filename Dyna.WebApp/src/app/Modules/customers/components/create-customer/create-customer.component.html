@@ -1,3 +1,27 @@
-<p>
-  create-customer works!
-</p>
+<form [formGroup]="customerForm" id="addCustomerForm" (ngSubmit)="handleCreateCustomerSubmission()">
+  <div class="mb-3">
+    <label for="firstName" class="form-label">Customer First Name</label>
+    <input class="form-control" type="text" formControlName="firstName" [ngClass]="{ 'is-invalid': submitted && firstName.errors }">
+    <span class="ps-3 error-label invalid-feedback" *ngIf="submitted && firstName.errors?.['required']">First Name is required</span>
+  </div>
+  <div class="mb-3">
+    <label for="lastName" class="form-label">Customer Last Name</label>
+    <input class="form-control" type="text" formControlName="lastName" [ngClass]="{ 'is-invalid': submitted && lastName.errors }">
+    <span class="ps-3 error-label" *ngIf="submitted && lastName.errors?.['required']">Last Name is required</span>
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Customer Email address</label>
+    <input type="email" class="form-control" formControlName="email" placeholder="name@example.com" [ngClass]="{ 'is-invalid': submitted && email.errors }">
+    <span class="ps-3 error-label" *ngIf="submitted && email.errors?.['required']">Email is required</span>
+    <span class="ps-3 error-label" *ngIf="submitted && email.errors?.['pattern']">Email is invalid</span>
+  </div>
+
+  <div class="button-container pt-4">
+    <button class="btn btn-primary me-3" type="submit" [disabled]="isCreatingCustomer">Add Customer</button>
+    <button class="btn btn-danger" [disabled]="isCreatingCustomer" (click)="handleCancel()">Cancel</button>
+    <div class="saving" *ngIf="isCreatingCustomer">
+      <span>We are creating new customer...</span>
+    </div>
+  </div>
+</form>
+
