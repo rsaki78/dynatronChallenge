@@ -1,20 +1,16 @@
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+This repository contains two folders, one for UI and one for API.
+UI has been made using Angular 15
+API has been made using .NET 8 
 
 # Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+For Angular project, Open Dyna.WebApp folder using Visual Studio code, open a terminal an execute the following command to install all the dependencies:
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+    npm i
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+Once all the dependencies are installed you can run the Web App using the following command
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+    npm start
+
+For .NET project, open Dyna.API solution under Dyna.API folder using Visual Studio and build the solution using Ctrl + B.
+Once application compiled successfully, you can run the project using Ctrl + F5 
