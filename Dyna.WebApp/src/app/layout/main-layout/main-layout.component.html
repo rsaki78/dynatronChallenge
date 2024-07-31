@@ -1,0 +1,13 @@
+<div class="row h-100">
+    <div class="main-container">
+      <div class="shadow bg-primary d-flex pt-5 pb-5 justify-content-between">
+        <div class="d-inline-block w-50 px-3">
+          <button class="btn btn-transparent text-muted bg-white me-3" [routerLink]="['/']"><i class="fas fa-th mr-2"></i>List of customers</button>
+          <button class="btn btn-transparent text-muted bg-white" [routerLink]="['/add-customer']"><i class="fas fa-th mr-2"></i>Add new customer</button>
+        </div>
+      </div>
+      <section class="main-content p-5">
+        <router-outlet></router-outlet>
+      </section>
+    </div>
+</div>

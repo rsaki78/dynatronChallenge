@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Customer } from 'src/models/customer';
 
 @Component({
   selector: 'app-edit-input',
@@ -6,9 +7,10 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./edit-input.component.scss']
 })
 export class EditInputComponent implements OnInit {
-  @Input() data!: number;
-  @Output() focusOut: EventEmitter<number> = new EventEmitter<number>();
-  currency = '$';
+  @Input() data!: string;
+  @Input() customerItem!: Customer
+  @Output() focusOut: EventEmitter<Customer> = new EventEmitter<Customer>();
+
   editMode = false;
 
   constructor() { }
@@ -17,7 +19,7 @@ export class EditInputComponent implements OnInit {
   }
 
   onFocusOut() {
-    this.focusOut.emit(this.data);
+    this.focusOut.emit(this.customerItem);
   }
 
 }

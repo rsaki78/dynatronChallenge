@@ -1,9 +1,9 @@
 <div *ngIf="!editMode" (click)="editMode = true" class="cell">
-  {{ currency }} {{ data | number : "" : "en" }}
+ {{ data }}
 </div>
 <input
   *ngIf="editMode"
-  type="number"
+  type="text"
   appAutofocus
   (focusout)="onFocusOut(); editMode = false"
   [(ngModel)]="data"
