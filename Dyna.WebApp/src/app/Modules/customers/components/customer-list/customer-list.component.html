@@ -15,34 +15,34 @@
   <ng-container *ngIf="customersDataSource && customersDataSource.length > 0">
     <tbody>
       <tr *ngFor="let customer of customersDataSource">
-        <td>
+        <td [ngClass]="{ 'bg-light-blue': customer.isEdit }">
           <div *ngIf="!customer.isEdit">{{ customer.firstName }}</div>
           <div *ngIf="customer.isEdit">
             <input type="text" class="form-control" [(ngModel)]="customer.firstName" />
           </div>
         </td>
-        <td>
+        <td [ngClass]="{ 'bg-light-blue': customer.isEdit }">
           <div *ngIf="!customer.isEdit">{{ customer.lastName }}</div>
           <div *ngIf="customer.isEdit">
             <input type="text" class="form-control" [(ngModel)]="customer.lastName" />
           </div>
         </td>
-        <td>
+        <td [ngClass]="{ 'bg-light-blue': customer.isEdit }">
           <div *ngIf="!customer.isEdit">{{ customer.email }}</div>
           <div *ngIf="customer.isEdit">
             <input type="text" class="form-control" [(ngModel)]="customer.email" />
           </div>
         </td>
-        <td>{{ customer.createdDate | date }}</td>
-        <td>{{ customer.lastUpdatedDate | date }}</td>
-        <td>
+        <td [ngClass]="{ 'bg-light-blue': customer.isEdit }">{{ customer.createdDate | date }}</td>
+        <td [ngClass]="{ 'bg-light-blue': customer.isEdit }">{{ customer.lastUpdatedDate | date }}</td>
+        <td [ngClass]="{ 'bg-light-blue': customer.isEdit }">
           <app-customer-status [CustomerStatus]="customer.isActive" *ngIf="!customer.isEdit" />
 
           <div class="form-check" *ngIf="customer.isEdit">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" [(ngModel)]="customer.isActive">
           </div>
         </td>
-        <td>
+        <td [ngClass]="{ 'bg-light-blue': customer.isEdit }">
           <div *ngIf="!customer.isEdit">
             <button class="btn btn-primary" (click)="customer.isEdit=true;">Edit</button>
           </div>

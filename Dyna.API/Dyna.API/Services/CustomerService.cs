@@ -40,6 +40,7 @@ namespace Dyna.API.Services
 
         public async Task UpdateCustomer(long id, Customer customer)
         {
+            customer.LastUpdatedDate = DateTime.Now;
             _context.Entry(customer).State = EntityState.Modified;
 
             try
